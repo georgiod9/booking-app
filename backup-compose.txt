@@ -24,3 +24,63 @@ services:
       POSTGRES_PASSWORD: strapi
     volumes:
       - ./data:/var/lib/postgresql/data
+
+
+
+
+
+FROM node:15.13-alpine
+
+WORKDIR /front-end
+
+ENV PATH="./node_modules/.bin:$PATH"
+
+COPY . .
+
+RUN npm run build
+
+CMD ["npm", "start"]
+
+
+
+
+
+
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./back-end:/srv/app
+      #- /srv/app/node_modules
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  app2:
+    build:
+      context: ./front-end
+    volumes:
+      - ./front-end/src/:/front-end/src/
+    ports:
+      - 3000:3000
+    image: app2:react
+    container_name: react_container
+    command: npm start
