@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_section_offers",
+  "info": {
+    "name": "section_offers",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text1": {
+      "type": "string"
+    },
+    "button_location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "special_offers": {
+      "collection": "special-offers"
+    }
+  }
+}

@@ -16,6 +16,41 @@
       "type": "component",
       "repeatable": false,
       "component": "page.header"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.banner"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.about"
+    },
+    "nft_collection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.section-nft"
+    },
+    "special_offers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.section-offers"
+    },
+    "discover": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.section-discover"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.section-testimonials"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.footer"
     }
   }
 }

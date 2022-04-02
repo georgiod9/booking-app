@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_page_banners",
+  "info": {
+    "name": "banner",
+    "icon": "archway",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button_flight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "button_hotel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "list_departure": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "list_arrival": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "button_search": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "icon_flight": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "icon_date": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "button_checkin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "button_checkout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    }
+  }
+}

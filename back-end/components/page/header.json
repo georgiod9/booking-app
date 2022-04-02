@@ -2,12 +2,13 @@
   "collectionName": "components_page_headers",
   "info": {
     "name": "header",
-    "icon": "pager"
+    "icon": "pager",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "logo": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -18,13 +19,11 @@
       "required": false,
       "pluginOptions": {}
     },
-    "button": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.button"
+    "name": {
+      "type": "string"
     },
-    "menu": {
-      "model": "file",
+    "icon_theme": {
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -34,6 +33,18 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "button_booking": {
+      "type": "string"
+    },
+    "button_about": {
+      "type": "string"
+    },
+    "button_nfts": {
+      "type": "string"
+    },
+    "button_connect": {
+      "type": "string"
     }
   }
 }

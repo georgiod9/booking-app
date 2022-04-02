@@ -1,0 +1,97 @@
+{
+  "collectionName": "components_page_footers",
+  "info": {
+    "name": "footer",
+    "icon": "angle-double-down"
+  },
+  "options": {},
+  "attributes": {
+    "title1": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "phone1": {
+      "type": "biginteger"
+    },
+    "phone2": {
+      "type": "biginteger"
+    },
+    "support": {
+      "type": "string"
+    },
+    "email_support": {
+      "type": "email"
+    },
+    "email_info": {
+      "type": "email"
+    },
+    "title_community": {
+      "type": "string"
+    },
+    "icon_insta": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "icon_twitter": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "icon_opensea": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "icon_discord": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "copyright": {
+      "type": "string"
+    }
+  }
+}

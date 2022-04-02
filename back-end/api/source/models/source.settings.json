@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "name": "source"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "airport_name": {
+      "type": "string"
+    },
+    "airport_location": {
+      "type": "string"
+    },
+    "airport_code": {
+      "type": "string"
+    },
+    "airport_address": {
+      "type": "string"
+    }
+  }
+}

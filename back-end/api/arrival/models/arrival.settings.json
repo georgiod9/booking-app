@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "arrivals",
+  "info": {
+    "name": "Arrival"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "airport_name": {
+      "type": "string"
+    },
+    "airport_address": {
+      "type": "string"
+    },
+    "airport_location": {
+      "type": "string"
+    },
+    "airport_code": {
+      "type": "string"
+    }
+  }
+}
