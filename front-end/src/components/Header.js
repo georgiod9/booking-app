@@ -1,17 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import { useState } from 'react'
 import {globals} from './Global'
+import { toggleTheme } from '../App'
+
+import { ThemeContext } from '../App'
+import {fetchTheme} from '../utils/fetchTheme'
+
 export var theme;
 
 
-export default function Header() {
- 
-  
+export default function Header(props) {
+  const [darkTheme, setDarkTheme] = useState(false)
 
+  const [appTheme, setAppTheme] = props.functions;
+
+  useEffect(() => {
+    
+  }, []);
+
+  
+  console.log("PROPS: ", props.functions[0])
+  console.log("header apptheme: ", appTheme)
+
+
+  const handleThemeToggle = () => {
+    props.setAppTheme("light")
+  }
+
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#333'  :  '#CCC',
+    color: darkTheme ? '#CCC'  :  '#333',
+    padding: '2rem',
+    margin: '2rem'
+  }
+
+  console.log("HEADER darkTheme: ", darkTheme)
   //var light_mode = true;
   var [light_mode, setMode] = useState(true);
+  
   
   var theme_button;
   const root = "http://localhost:1337"
@@ -29,32 +57,24 @@ export default function Header() {
 
   } 
 
+  function toggleTheme() {
 
-  function  toggleTheme() {
-    console.log("Light Mode: ", light_mode);
-    console.log("ENV: ", process.env.REACT_APP_THEME)
+    (appTheme === "light" ? setAppTheme("dark") : setAppTheme("light"))
+    if (appTheme === "light") {
+        setMode(false)
+        setDarkTheme(true)
+    }
+    else if (appTheme === "dark") {
+        setMode(true);
+        setDarkTheme(false)
+    }
+    console.log("Light Mode: ", light_mode)
 
-    if (light_mode) {
-      theme_button = root + data.header.icon_theme[1].url;
-      console.log("light mode on");
-      theme = true;
-      setMode(false)
-      this.theme = "light"
-
-    } 
-    else {
-      theme_button = root + data.header.icon_theme[0].url;
-      console.log("dark mode on");
-      theme = false;
-      setMode(true)
-      this.theme = "dark"
-     
-    } 
-    
   }
+
   
   return (
-    <div>
+    <div >
       <header className='site-header flex-box flex-direction spacing'>
         <div className='center_div'>
           <Link className='no-under-line paddingR-s' to="/">
@@ -67,12 +87,12 @@ export default function Header() {
           </Link>
         </div>
 
-
         <div className='flex-box flex-direction center gap-sm wrapping'>
           <div className='center_div clickable'>
             <img
               className='center_noresize'
               onClick={toggleTheme}
+              
               src= {
                 light_mode 
                 ? dark_icon 
@@ -91,7 +111,6 @@ export default function Header() {
             <p>{data.header.button_connect}</p>
           </div>
         </div>
-
 
       </header>
     
