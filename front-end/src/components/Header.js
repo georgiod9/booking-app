@@ -2,61 +2,27 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import { useState } from 'react'
-import {globals} from './Global'
-import { toggleTheme } from '../App'
-
-import { ThemeContext } from '../App'
-import {fetchTheme} from '../utils/fetchTheme'
-
-export var theme;
 
 
 export default function Header(props) {
   const [darkTheme, setDarkTheme] = useState(false)
-
   const [appTheme, setAppTheme] = props.functions;
 
-  useEffect(() => {
-    
-  }, []);
-
-  
-  console.log("PROPS: ", props.functions[0])
-  console.log("header apptheme: ", appTheme)
-
-
-  const handleThemeToggle = () => {
-    props.setAppTheme("light")
-  }
-
-  const themeStyles = {
-    backgroundColor: darkTheme ? '#333'  :  '#CCC',
-    color: darkTheme ? '#CCC'  :  '#333',
-    padding: '2rem',
-    margin: '2rem'
-  }
-
-  console.log("HEADER darkTheme: ", darkTheme)
-  //var light_mode = true;
   var [light_mode, setMode] = useState(true);
-  
-  
-  var theme_button;
+
   const root = "http://localhost:1337"
   const { loading, error, data } = useFetch('http://localhost:1337/homepage')
  
   if (loading) return <p></p>
   if (error) return <p>Error...</p>
 
+  //set dark/light icons
   var light_icon = root + data.header.icon_theme[1].url;
   var dark_icon = root + data.header.icon_theme[0].url;
 
 
-  if (light_mode) {
-    theme_button = root + data.header.icon_theme[0].url;
 
-  } 
-
+  //toggle theme when theme button is pressed
   function toggleTheme() {
 
     (appTheme === "light" ? setAppTheme("dark") : setAppTheme("light"))
@@ -74,23 +40,23 @@ export default function Header(props) {
 
   
   return (
-    <div >
-      <header className='site-header flex-box flex-direction spacing'>
-        <div className='center_div'>
-          <Link className='no-under-line paddingR-s' to="/">
-            <img src={
+
+      <header className={` ${darkTheme ? 'header_gradient-D' : 'header_gradient-L'} site-header flex-box flex-direction spacing wrap `}>
+       
+          <Link className='no-under-line paddingR-s ' to="/">
+            <img  src={
               light_mode
               ? root + data.header.logo[0].url
               : root + data.header.logo[1].url
             }
             />
           </Link>
-        </div>
+   
 
-        <div className='flex-box flex-direction center gap-sm wrapping'>
+        <div className='flex-box flex-direction center gap-sm wrapping nowrap center_items '>
           <div className='center_div clickable'>
             <img
-              className='center_noresize'
+              className='center_image glow'
               onClick={toggleTheme}
               
               src= {
@@ -107,6 +73,9 @@ export default function Header(props) {
           <div className='button button-light'>
             <p>{data.header.button_about}</p>
           </div>
+          <div className='button button-light'>
+            <p>{data.header.button_nfts}</p>
+          </div>
           <div className='button button-connect'>
             <p>{data.header.button_connect}</p>
           </div>
@@ -115,7 +84,7 @@ export default function Header(props) {
       </header>
     
 
-    </div>
+
 
   )
 }
