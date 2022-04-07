@@ -190,6 +190,10 @@ section h2 {
   padding-left: 4vw;
 }
 
+.paddingR-xs {
+  padding-right: 5px;
+}
+
 .paddingR-s {
   padding-right: 20px;
 }
@@ -369,6 +373,10 @@ section h2 {
   flex-shrink: 2;
 }
 
+.gap_bottom {
+  gap: 10px 54vw;
+}
+
 .gap-list {
   gap: 0px 30px;
 }
@@ -447,10 +455,26 @@ section h2 {
   border: 0.1vw solid rgba(143, 146, 169, 0.8);
 }
 
+.button-light:active {
+  border: 0.1vw solid rgba(143, 146, 169, 0);
+}
+
 
 .button-connect {
   background-color: rgb(60, 113, 255);
   border: 2.8px solid rgb(60, 113, 255);
+  color: white;
+}
+
+.button-connect:hover {
+  background-color: rgba(60, 112, 255, 0.801);
+  border: 2.8px solid rgba(60, 112, 255, 0);;
+  color: white;
+}
+
+.button-connect:active {
+  background-color:  rgba(60, 112, 255, 0.527);
+  border: 2.8px solid rgba(60, 112, 255, 0);;
   color: white;
 }
 
@@ -512,6 +536,7 @@ section h2 {
   box-shadow: 0 5px 15px rgba(240, 243, 242, 0.062);
   border-radius: 20px;
 }
+
 
 .glow-solid-L {
   color: rgb(0, 0, 0);
@@ -599,13 +624,17 @@ section h2 {
 }
 
 .box-m {
-  height: 10vh;
+  height: 9vh;
   width: 65vw;
+}
+
+.als {
+  justify-content: center;
 }
 
 @media (max-width:1024px) {
   .box-m {
-    height: 10vh;
+    height: 9vh;
     width: 78vw;
   }
 }
@@ -661,6 +690,10 @@ section h2 {
   margin: auto auto;
 }
 
+.align-vertically {
+  display: inline-block;
+}
+
 .align_items-end {
   align-items: flex-end;
 
@@ -672,6 +705,11 @@ section h2 {
 
 .align_content-end {
   align-content: flex-start;
+
+}
+
+.align_content-center {
+  align-content: center;
 
 }
 
@@ -747,6 +785,11 @@ section h2 {
 
 }
 
+.non-selectable {
+  user-select: none;
+}
+
+
 .button_border-L {
   border: 1px solid #1b1f2e25;
 }
@@ -766,6 +809,28 @@ section h2 {
 
 }
 
+.button_search {
+  background-color: rgb(60, 113, 255);
+  border: 2.8px solid rgb(60, 113, 255);
+  color: white;
+}
+
+.button_search:active {
+  transition: 0.2s all;
+  background-color: rgba(60, 112, 255, 0.658);
+  border: 2.8px solid rgba(60, 112, 255, 0);
+
+}
+
+
+.icon-search {
+  width: auto;
+  height: auto;
+  max-width: 2vw;
+  max-height: 1.5vh;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 
 

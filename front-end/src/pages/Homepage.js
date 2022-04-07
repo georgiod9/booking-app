@@ -53,7 +53,7 @@ export default function Homepage(props) {
       <section >
         <div className='section1-bg'></div>
 
-        <div className='overlap'>
+        <div className='overlap non-selectable'>
 
           <p className='center_text font-l fontColor-b  paddingT-l margin-top text-nowrap'>{response && response.banner.title}</p>
           <p className='center_text font-m fontColor-b-opaque no-margin'>{response && response.banner.description}</p>
@@ -97,7 +97,7 @@ export default function Homepage(props) {
                     `}>
 
               {searchMode === 'Flight' ?
-                <div className='flex-box flex-evenly align_items-end horizontal paddingT-m '>
+                <div className='flex-box flex-evenly align_items-end horizontal paddingT-s '>
 
                   <div className='flex-box vertical align-start gap-s '>
 
@@ -171,7 +171,25 @@ export default function Homepage(props) {
                 <div></div>
               }
 
+
+
             </div>
+
+            <div className='flex-box horizontal flex-center gap_bottom paddingT-m'>
+
+              <label className='karla-regular font-ms align-vertically'>
+                <input className="align-vertically" type="checkbox"></input>Direct flight
+              </label>
+
+
+
+              <div className={`clickable flex-box horizontal align_items-end button-small button_search karla-bold`}>
+                <img className='icon-search paddingR-xs' src={root + (response && response.banner.button_search.icon.url)}></img>
+                <p className=''>Search</p>
+              </div>
+
+            </div>
+
 
 
 
