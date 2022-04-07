@@ -27,9 +27,9 @@ export default function Homepage(props) {
     { data && console.log("data: ", data.banner) }
     {
       data &&
-      setResponse(data)
-      &&
-      console.log("response: ", response.banner)
+        setResponse(data)
+        &&
+        console.log("response: ", response.banner)
     }
 
   })
@@ -49,7 +49,7 @@ export default function Homepage(props) {
 
   return (
 
-    <div id="homepage" className='flex-box vertical paddingT-m section-pad'>
+    <div id="homepage" className='flex-box align-center vertical paddingT-m section-pad'>
       <section >
         <div className='section1-bg'></div>
 
@@ -60,29 +60,29 @@ export default function Homepage(props) {
 
           <div className={`search_header box-l ${darkTheme ? "search_header-colorD" : "search_header-colorL"}`}>
 
-            
-            <div className='flex-box gap-s padding-toggle_buttons'>
-              <div  onClick={() => handleFlightClick("Flight")} className=
-              {
-                `button-small clickable 
-                ${searchMode === 'Flight' 
-                ?`${darkTheme ?'glow-solid-D': 'glow-solid-L' }` 
-                :`${darkTheme ? 'glow-D' : 'glow-L'}`}
+
+            <div className='flex-box align-center gap-s padding-toggle_buttons'>
+              <div onClick={() => handleFlightClick("Flight")} className=
+                {
+                  `button-small clickable 
+                ${searchMode === 'Flight'
+                    ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
+                    : `${darkTheme ? 'glow-D' : 'glow-L'}`}
 
                 ${darkTheme ? 'button_border-D' : 'button_border-L'}
                 `
                 }>
-                <img className='icon-s' src={root + (response && response.banner.button_flight.icon.url)}></img>
+                <img className='icon-flight-s' src={root + (response && response.banner.button_flight.icon.url)}></img>
                 <p >{response && response.banner.button_flight.title}</p>
               </div>
 
               <div onClick={() => handleFlightClick("Hotel")} className=
-              {
-                `button-small clickable 
-                ${searchMode === 'Hotel' 
-                ? `${darkTheme ?'glow-solid-D': 'glow-solid-L' }` 
-                : `${darkTheme ? 'glow-D' : 'glow-L'}`}
-                
+                {
+                  `button-small clickable 
+                ${searchMode === 'Hotel'
+                    ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
+                    : `${darkTheme ? 'glow-D' : 'glow-L'}`}
+
                 ${darkTheme ? 'button_border-D' : 'button_border-L'}
                 `
                 }>
@@ -92,7 +92,90 @@ export default function Homepage(props) {
             </div>
 
 
-            <div className={`search_sub box-m ${darkTheme ? "search_sub-colorD" : "search_sub-colorL"}`}></div>
+            <div className={`search_sub box-m text-nowrap
+                    ${darkTheme ? "search_sub-colorD" : "search_sub-colorL"}
+                    `}>
+
+              {searchMode === 'Flight' ?
+                <div className='flex-box flex-evenly align_items-end horizontal paddingT-m '>
+
+                  <div className='flex-box vertical align-start gap-s '>
+
+                    <p className={`
+                          align-text karla-regular font-s 
+                          ${darkTheme ? 'font-white' : 'font-gray'}
+                          `}>Origin</p>
+
+                    <div className='button-list flex-box horizontal gap-s'>
+                      <p className='karla-bold font-ms'>Beirut, Lebanon</p>
+                      <img className='icon-dropdown paddingT-xs' src={root + (response && response.banner.list_departure.icon.url)}></img>
+                    </div>
+                  </div>
+
+                  <div className='flex-box vertical align_items-center align_content-end '>
+                    <img className='icon-s' src={root + (response && response.banner.icon_flight.url)}></img>
+                  </div>
+
+
+                  <div className='flex-box vertical align-start gap-s '>
+
+                    <p className={`
+                        align-text karla-regular font-s 
+                        ${darkTheme ? 'font-white' : 'font-gray'}
+                        `}>Destination</p>
+
+                    <div className='button-list flex-box horizontal gap-s'>
+                      <p className='karla-bold font-ms'>Paris, France</p>
+                      <img className='icon-dropdown paddingT-xs' src={root + (response && response.banner.list_departure.icon.url)}></img>
+                    </div>
+                  </div>
+
+
+                  <div className='line-separator'></div>
+
+                  <div className='flex-box vertical align-start gap-s '>
+
+                    <p className={`
+                        align-text karla-regular font-s 
+                        ${darkTheme ? 'font-white' : 'font-gray'}
+                        `}>Check in</p>
+
+                    <div className='button-list flex-box horizontal gap-s'>
+                      <p className='karla-bold font-ms'>3,Mar,2022</p>
+                      <img className='icon-dropdown paddingT-xs' src={root + (response && response.banner.button_checkout.icon.url)}></img>
+                    </div>
+                  </div>
+
+
+                  <div className='flex-box vertical align_items-center align_content-end  '>
+                    <img className='icon-s' src={root + (response && response.banner.icon_date.url)}></img>
+                  </div>
+
+                  <div className='flex-box vertical align-start gap-s '>
+
+                    <p className={`
+                        align-text karla-regular font-s 
+                        ${darkTheme ? 'font-white' : 'font-gray'}
+                        `}>Check out</p>
+
+                    <div className='button-list flex-box horizontal gap-s'>
+                      <p className='karla-bold font-ms'>23,Apr,2022</p>
+                      <img className='icon-dropdown paddingT-xs' src={root + (response && response.banner.button_checkout.icon.url)}></img>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                :
+                <div></div>
+              }
+
+            </div>
+
+
+
+
           </div>
         </div>
 
