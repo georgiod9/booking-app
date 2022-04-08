@@ -10,7 +10,7 @@
     "title": {
       "type": "string"
     },
-    "description": {
+    "description1": {
       "type": "text"
     },
     "icon1": {
@@ -48,6 +48,9 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "description2": {
+      "type": "text"
     }
   }
 }
