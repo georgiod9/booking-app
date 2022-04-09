@@ -59,7 +59,7 @@ export default function Homepage(props) {
           <p className='center_text font-l fontColor-b  margin-top text-nowrap'>{response && response.banner.title}</p>
           <p className='center_text font-m fontColor-b-opaque no-margin'>{response && response.banner.description}</p>
 
-          <div className={`search_header box-l ${darkTheme ? "search_header-colorD" : "search_header-colorL"}`}>
+          <div className={`flex-box vertical align_items-start search_header box-l ${darkTheme ? "search_header-colorD" : "search_header-colorL"}`}>
 
             <div className='flex-box align-center gap-s padding-toggle_buttons'>
               <div onClick={() => handleFlightClick("Flight")} className=
@@ -100,10 +100,13 @@ export default function Homepage(props) {
 
             </div>
 
-            <div className='flex-box horizontal flex-center gap_bottom paddingT-m bottom_box marginL-3'>
-              <label className='karla-regular font-ms align-vertically radio_box'>
-                <input className="align-vertically" type="checkbox"></input>Direct flight
-              </label>
+            <div className='flex-box horizontal flex-center align_items-center gap_bottom paddingT-m  bottom_box marginL-3'>
+              <div className='checkboxes'>
+                <label className='karla-regular align-vertically radio_box'>
+                  <input className="align-vertically" type="checkbox"></input>Direct flight
+                </label>
+              </div>
+
 
               <div className={`clickable flex-box horizontal align_items-end button-medium button_search karla-bold`}>
                 <img className='icon-search paddingR-xs' src={root + (response && response.banner.button_search.icon.url)}></img>
@@ -118,26 +121,26 @@ export default function Homepage(props) {
 
 
       <section>
-        <div className='flex-box nowrap vertical flex-center gap-ms text-center align-center box-about paddingT-l'>
-          <p className='roboto-medium font-m'>About Us</p>
-          <p className='karla-regular font-ms'>{response && response.about.description1}</p>
-          <p className='karla-regular font-ms paddingT-s'>{response && response.about.description2}</p>
+        <div className='flex-box nowrap vertical flex-center gap-ms text-center align-center box-about  padding-section'>
+          <p className='roboto-medium font-title'>About Us</p>
+          <p className='karla-regular font-about-body'>{response && response.about.description1}</p>
+          <p className='karla-regular  font-about-body paddingT-s'>{response && response.about.description2}</p>
         </div>
         <div className='flex-box horizontal flex-center paddingT-s gap-m'>
-          <img src={root + (response && response.about.icon1.formats.thumbnail.url)}></img>
-          <img src={root + (response && response.about.icon2.formats.thumbnail.url)}></img>
-          <img src={root + (response && response.about.icon3.formats.thumbnail.url)}></img>
+          <img className='icon-mini' src={root + (response && response.about.icon1.formats.thumbnail.url)}></img>
+          <img className='icon-mini' src={root + (response && response.about.icon2.formats.thumbnail.url)}></img>
+          <img className='icon-mini' src={root + (response && response.about.icon3.formats.thumbnail.url)}></img>
         </div>
       </section>
 
       <section>
-        <div className='flex-box vertical flex-center gap-ms text-center align-center paddingT-l'>
-          <p className='roboto-medium font-m'>Our NFT Project</p>
+        <div className='flex-box vertical flex-center gap-ms text-center align-center paddingT-m padding-section'>
+          <p className='roboto-medium font-title'>Our NFT Project</p>
           <div className='flex-box horizontal flex-center paddingT-m gap-m collection_bg'>
-          
+
           </div>
         </div>
-        
+
       </section>
 
       <section>

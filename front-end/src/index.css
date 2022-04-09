@@ -24,6 +24,10 @@
     src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
 }
 
+* {
+  
+}
+
 header {
     padding: 0px 10vw;
     margin: auto auto;
@@ -248,6 +252,14 @@ section h2 {
     justify-content: flex-start;
 }
 
+.flexbasis-33 {
+    flex-basis: 10%;
+}
+
+.icon-mini {
+    max-width: 25vw;
+}
+
 .wrap {
     flex-wrap: wrap;
 }
@@ -294,6 +306,7 @@ section h2 {
     flex-direction: row;
 }
 
+
 @media (max-width:450px) {
     .flex-direction {
         flex-direction: column;
@@ -311,6 +324,7 @@ section h2 {
 .spacing {
     justify-content: space-between;
 }
+
 
 .relative {
     position: relative;
@@ -361,7 +375,7 @@ section h2 {
 }
 
 .gap_bottom {
-    gap: 10px 40vw;
+    gap: 10px 30vw;
 }
 
 @media (max-width:1024px) {
@@ -508,6 +522,21 @@ section h2 {
     font-size: 1vw;
 }
 
+
+
+
+.font-list {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 770px) {
+    .font-list {
+        font-size: 0.6rem;
+    }
+    
+}
+
+
 .button:hover {
     background-color: #868db33f;
 }
@@ -595,6 +624,14 @@ section h2 {
     margin-top: 1vw;
 }
 
+@media (max-width:450px) {
+    .search_sub {
+        border-radius: 25px;
+        margin-left: 0vw;
+        margin-top: 1vw;
+    }
+}
+
 .box-m {
     height: auto;
     width: 60vw;
@@ -629,16 +666,16 @@ section h2 {
     width: 66vw;
 }
 
-
-@media (min-width:1025px) {
+@media (min-width: 1440px) {
     .line-separator {
-        border-left: 2px solid #868db383;
-        ;
+        border-left: 1.5px solid #868db383;
         height: 4vw;
-        margin-left: 2vw;
-        margin-right: 2vw;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
+    
+
 
 .search_sub-colorL {
     border: 1px solid #1b1f2e25;
@@ -712,16 +749,6 @@ section h2 {
     max-height: 2vw;
 }
 
-@media (max-width:450px) {
-    .icon-flight {
-        width: 200px;
-        height: auto;
-        transform: rotate(90deg);
-    }
-    .icon-date {
-        transform: rotate(90deg);
-    }
-}
 
 
 
@@ -790,7 +817,7 @@ section h2 {
 
 .button-medium {
     border-radius: 50px;
-    width: 10vw;
+    width: auto;
     height: 1.5vw;
     line-height: 1.5vw;
     user-select: none;
@@ -801,7 +828,25 @@ section h2 {
     column-gap: 0px;
     text-align: center;
     font-size: 0.7vw;
-    padding-left: 0px;
+    padding: 0px 10px;
+}
+
+@media (max-width:450px) {
+    .button-medium {
+        border-radius: 50px;
+        width: 10vw;
+        height: 3vw;
+        line-height: 3vw;
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        column-gap: 0px;
+        text-align: center;
+        font-size: 0.6rem;
+        padding: 0px 10px;
+    }
 }
 
 .non-selectable {
@@ -816,10 +861,30 @@ section h2 {
     border: 1px solid #ffffff60;
 }
 
+
+
+.checkboxes label {
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.checkboxes input {
+    vertical-align: middle;
+}
+
+
+
 .padding-toggle_buttons {
     margin-left: 2.5vw;
     margin-top: 1vw;
 }
+
+.padding-section {
+    margin-top: 100px;
+}
+
 
 .search_toggle {
     display: flex;
@@ -857,6 +922,15 @@ section h2 {
 .box-about {
     width: 86vw;
     height: auto;
+    
+}
+
+@media (max-width:450px) {
+    .box-about {
+        width: 90vw;
+        height: auto;
+        padding-left: 5vw;
+    }
 }
 
 @media (min-width:1440px){
@@ -867,12 +941,38 @@ section h2 {
     
 }
 
+.font-about-body {
+    font-size: 16px;
+}
+
+.font-title {
+    font-size: 30px;
+}
+
 
 .box-collection {
     width: 66vw;
     height: 35vh;
 
 }
+
+.box-icons {
+    display: inline;
+    margin: auto auto;
+}
+
+@media (max-width:450px) {
+    .box-icons {
+        max-width: 90vw;
+        margin-left: 5vw;
+    }
+}
+
+
+
+
+
+
 
 .card {
     width: 10vw;
