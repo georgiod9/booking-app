@@ -72,7 +72,7 @@ export default function Header(props) {
       </Link>
 
 
-      <div className='flex-box flex-direction  align_items-center center-vertically  gap-sm wrapping nowrap center_items '>
+      <div className='flex-box flex-direction  align_items-center center-vertically  gap-header wrapping nowrap center_items '>
         <div className='center_div clickable'>
           <img
             className='center_image glow'

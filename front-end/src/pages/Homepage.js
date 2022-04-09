@@ -101,12 +101,9 @@ export default function Homepage(props) {
             </div>
 
             <div className='flex-box horizontal flex-center gap_bottom paddingT-m bottom_box marginL-3'>
-
               <label className='karla-regular font-ms align-vertically radio_box'>
                 <input className="align-vertically" type="checkbox"></input>Direct flight
               </label>
-
-
 
               <div className={`clickable flex-box horizontal align_items-end button-medium button_search karla-bold`}>
                 <img className='icon-search paddingR-xs' src={root + (response && response.banner.button_search.icon.url)}></img>
@@ -121,15 +118,31 @@ export default function Homepage(props) {
 
 
       <section>
-        <div className='flex-box vertical flex-center gap-ms text-center align-center box-about paddingT-l'>
+        <div className='flex-box nowrap vertical flex-center gap-ms text-center align-center box-about paddingT-l'>
           <p className='roboto-medium font-m'>About Us</p>
           <p className='karla-regular font-ms'>{response && response.about.description1}</p>
           <p className='karla-regular font-ms paddingT-s'>{response && response.about.description2}</p>
         </div>
-        <div className='flex-box horizontal flex-center paddingT-m gap-m'>
+        <div className='flex-box horizontal flex-center paddingT-s gap-m'>
           <img src={root + (response && response.about.icon1.formats.thumbnail.url)}></img>
           <img src={root + (response && response.about.icon2.formats.thumbnail.url)}></img>
           <img src={root + (response && response.about.icon3.formats.thumbnail.url)}></img>
+        </div>
+      </section>
+
+      <section>
+        <div className='flex-box vertical flex-center gap-ms text-center align-center paddingT-l'>
+          <p className='roboto-medium font-m'>Our NFT Project</p>
+          <div className='flex-box horizontal flex-center paddingT-m gap-m collection_bg'>
+          
+          </div>
+        </div>
+        
+      </section>
+
+      <section>
+        <div className='box-m'>
+
         </div>
       </section>
 

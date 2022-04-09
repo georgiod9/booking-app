@@ -35,7 +35,7 @@ export function SeachHeader(props) {
     return (
         <div>
             {searchMode === 'Flight' ?
-                <div className='flex-box flex-evenly align_items-end horizontal paddingT-s '>
+                <div className='flex-box flex-center flex-wrap align_items-end horizontal paddingT-s gap-s  '>
 
                     <div className='flex-box horizontal gap-s align_items-start'>
 
