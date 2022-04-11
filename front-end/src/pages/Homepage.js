@@ -26,14 +26,7 @@ export default function Homepage(props) {
   const [searchMode, setSearchMode] = useState('Flight')
 
   useEffect(() => {
-    { data && console.log("data: ", data.banner) }
-    {
-      data &&
-        setResponse(data)
-        &&
-        console.log("response: ", response.banner)
-    }
-
+    {data && setResponse(data)}
   })
 
   function handleFlightClick(value) {
@@ -74,7 +67,7 @@ export default function Homepage(props) {
                 `
                 }>
                 <img className='icon-flight-s' src={root + (response && response.banner.button_flight.icon.url)}></img>
-                <p >{response && response.banner.button_flight.title}</p>
+               <p >{response && response.banner.button_flight.title}</p>
               </div>
 
               <div onClick={() => handleFlightClick("Hotel")} className=
@@ -123,9 +116,9 @@ export default function Homepage(props) {
       </section>
 
 
-      <section>
+      <section >
         <div className='flex-box nowrap vertical flex-center gap-ms text-center align-center box-about  padding-section'>
-        <p  className='roboto-regular font-title'>About Us</p>
+        <p id="about" className='roboto-regular font-title'>About Us</p>
           <p className='karla-regular font-about-body'>{response && response.about.description1}</p>
           <p className='karla-regular  font-about-body paddingT-s'>{response && response.about.description2}</p>
         </div>
@@ -136,9 +129,9 @@ export default function Homepage(props) {
         </div>
       </section>
 
-      <section className='non-selectable'>
+      <section  className='non-selectable'>
         <div className='flex-box vertical flex-center gap-ms text-center align-center  padding-section'>
-        <p className='roboto-regular font-title'>Our NFT Project</p>
+        <p id="collection" className='roboto-regular font-title'>Our NFT Project</p>
           <div className='flex-box vertical flex-center align_items-center align_content-center box-collection gap-collection paddingT-m gap-m collection_bg'>
                 <div className='flex-box horizontal flex-center gap-cards'>
                     <div className='card card1'>
@@ -151,7 +144,7 @@ export default function Homepage(props) {
 
                     </div>
                 </div>
-                <div className='button-roadmap marginB-m'>
+                <div className='button-roadmap clickable marginB-m'>
                   <p className='karla-bold font-button white'>ROADMAP</p>
                 </div>
           </div>
@@ -159,7 +152,7 @@ export default function Homepage(props) {
 
       </section>
 
-      <section>
+      <section >
       
           <SpecialOffers functions={[appTheme, setAppTheme, searchMode, setSearchMode]}/>
     

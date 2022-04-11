@@ -21,11 +21,13 @@ export default function Header(props) {
   var light_icon = root + data.header.icon_theme[1].url;
   var dark_icon = root + data.header.icon_theme[0].url;
 
-
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#1B1F2E' : 'white',
+    color: darkTheme ? '#CCC' : '#333',
+  }
 
   //toggle theme when theme button is pressed
   function toggleTheme() {
-
     (appTheme === "light" ? setAppTheme("dark") : setAppTheme("light"))
     if (appTheme === "light") {
       setMode(false)
@@ -58,7 +60,7 @@ export default function Header(props) {
 
   return (
 
-    <header className={` ${darkTheme ? 'header_gradient-D' : 'header_gradient-L'} non-selectable site-header flex-box flex-direction spacing wrap `}>
+    <header style={themeStyles} className={` ${darkTheme ? 'header_gradient-D' : 'header_gradient-L'} non-selectable site-header flex-box flex-direction spacing wrap `}>
 
       <Link
         onClick={bookingHandler}
@@ -94,21 +96,27 @@ export default function Header(props) {
                           `}>
           <p className=''>{data.header.button_booking}</p>
         </div>
-        <div onClick={aboutHandler} className={`button-header button-light  karla-bold 
+
+        <a style={themeStyles} href='#about'>
+          <div onClick={aboutHandler} className={`button-header button-light  karla-bold 
                            ${appState === 'about'
-            ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
-            : `${darkTheme ? 'glow-D' : 'glow-L'}`}
+              ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
+              : `${darkTheme ? 'glow-D' : 'glow-L'}`}
                            
                            `}>
-          <p>{data.header.button_about}</p>
-        </div>
-        <div onClick={nftsHandler} className={`button-header button-light  karla-bold 
+            <p>{data.header.button_about}</p>
+          </div>
+        </a>
+
+        <a style={themeStyles} href='#collection'>
+          <div onClick={nftsHandler} className={`button-header button-light  karla-bold 
                           ${appState === 'nfts'
-            ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
-            : `${darkTheme ? 'glow-D' : 'glow-L'}`}
+              ? `${darkTheme ? 'glow-solid-D' : 'glow-solid-L'}`
+              : `${darkTheme ? 'glow-D' : 'glow-L'}`}
                           `}>
-          <p>{data.header.button_nfts}</p>
-        </div>
+            <p>{data.header.button_nfts}</p>
+          </div>
+        </a>
         <div onClick={connectHandler} className={`button-header button-connect karla-regular
                           `}>
           <p>{data.header.button_connect}</p>

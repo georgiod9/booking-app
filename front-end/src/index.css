@@ -25,7 +25,7 @@
 }
 
 * {
-  
+    scroll-behavior: smooth !important;
 }
 
 header {
@@ -108,6 +108,10 @@ body {
     font-family: "Karla-Regular";
 }
 
+a {
+    border-radius: 20px;
+}
+
 p {
     margin: 0;
 }
@@ -136,6 +140,18 @@ h4 {
     font-size: 0.8rem;
 }
 
+h5 {
+    font-family: "Karla-Regular";
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+h6 {
+    font-family: "Karla-Bold";
+    margin: 0;
+    font-size: 1rem;
+}
+
 .App {
     font-size: 1.2em;
     margin: 0 0;
@@ -146,8 +162,14 @@ h4 {
 
 a {
     text-decoration: none;
-    color: #8e2ad6;
+    color:inherit;
     border-bottom: 1px dotted;
+    border-bottom-style: none;
+}
+
+section {
+    
+    scroll-behavior: smooth;    /* <----- THE SECRET ---- */
 }
 
 section h1 {
@@ -247,6 +269,11 @@ margin-right: 1vw;
 
 .paddingL-xs {
     padding-left: 0.5vw;
+}
+
+
+.paddingL-ms {
+    padding-left: 1vw;
 }
 
 .paddingL-s {
@@ -559,7 +586,6 @@ margin-right: 1vw;
 .button-connect:active {
     background-color: rgba(60, 112, 255, 0.527);
     border: 2.8px solid rgba(60, 112, 255, 0);
-    ;
     color: white;
 }
 
@@ -579,8 +605,19 @@ margin-right: 1vw;
     padding-right: 0px;
 }
 
+.button-round {
+    border: 1px solid rgb(60, 113, 255);
+    border-radius: 10px;
+    width: max-content;
+    padding: 5px 5px;
+}
+
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .font-s {
@@ -790,8 +827,16 @@ margin-right: 1vw;
     align-items: center;
 }
 
+.align_items-baseline {
+    align-items: baseline;
+}
+
 .align_content-end {
     align-content: flex-end;
+}
+
+.align_content-baseline {
+    align-content: baseline;
 }
 
 .align_content-center {
@@ -1169,10 +1214,27 @@ margin-right: 1vw;
     border: 1px solid #3B71FE;
 }
 
+/* content of offer card */
+.offer_image {
+    border-radius: 10px;
+    margin: 12px auto;
+    width: 90%;
+    
+}
 
 
 
+.relative {
+    display: relative;
+}
 
+.absolute {
+    display: absolute;
+}
+
+.stick-left {
+    left: 0;
+}
 
 
 

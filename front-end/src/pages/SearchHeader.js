@@ -17,15 +17,9 @@ export function SeachHeader(props) {
     })
 
     useEffect(() => {
-        { data && console.log("data: ", data.banner) }
-        {
-            data &&
-                setResponse(data)
-                &&
-                console.log("response: ", response.banner)
-        }
-
-    })
+        {data && setResponse(data)}
+      })
+    
 
     const root = "http://localhost:1337"
     const { loading, error, data } = useFetch('http://localhost:1337/homepage')
