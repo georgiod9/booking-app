@@ -11,7 +11,7 @@
       "type": "string"
     },
     "icon": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",

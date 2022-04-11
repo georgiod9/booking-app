@@ -47,7 +47,7 @@ export function SpecialOffers(props) {
                                  ${darkTheme ? 'button-dark' : 'button-light'}
                                 `}>
                     <h3 className='display-inline blue'>Lebanon</h3>
-                    <img className='display-inline paddingL-xs' src={root + (response && response.special_offers.button_location.icon[0].url)}></img>
+                    <img className='display-inline paddingL-xs' src={root + (response && response.special_offers.button_location.icon.url)}></img>
                 </div>
 
                 <div className=" flex-box horizontal flex-center align_items-center paddingT-m paddingB-m">

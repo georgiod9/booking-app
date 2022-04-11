@@ -113,6 +113,8 @@ export default function Homepage(props) {
                 <img className='icon-search paddingR-xs' src={root + (response && response.banner.button_search.icon.url)}></img>
                 <p className=''>Search</p>
               </div>
+              
+
 
             </div>
 
