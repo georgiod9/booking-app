@@ -52,6 +52,10 @@ export function SpecialOffers(props) {
 
     }
 
+    function handleViewOffers() {
+        
+    }
+
     function getOffers(element) {
 
         // response && console.log("OFFER: ", array[0])
@@ -69,13 +73,15 @@ export function SpecialOffers(props) {
                         <img className='offer_image' src={root + (response && array[selector].image.url)}></img>
 
                         <div className="relative paddingL-ms ">
-                            <h5 className="font-gray text-left ">03 MAR 2022</h5>
-                            <h6 className="text-left ">CINQUE TERRE</h6>
+                            <h5 className="font-gray text-left ">{response && array[selector].date}</h5>
+                            <h6 className="text-left ">{response && array[selector].title}</h6>
 
-                            <div className="flex-box horizontal align_items-baseline flex-start gap-s">
-                                <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
-                                <h6 className="display_inline  ">90$</h6>
-                                <div className="display_inline button-connect button-round paddingL-s ">
+                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                                <div>
+                                    <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
+                                    <h6 className="display_inline paddingL-ms ">{response && array[selector].price}$</h6>
+                                </div>
+                                <div className="display_inline font-book button-connect button-round paddingL-s ">
                                     Book Now
                                 </div>
                             </div>
@@ -90,6 +96,21 @@ export function SpecialOffers(props) {
                     ${darkTheme ? 'card_offers_border-D' : 'card_offers_border-L'}
                     `}>
                         <img className='offer_image' src={root + (response && array[selector + 1].image.url)}></img>
+
+                        <div className="relative paddingL-ms ">
+                            <h5 className="font-gray text-left ">{response && array[selector + 1].date}</h5>
+                            <h6 className="text-left ">{response && array[selector + 1].title}</h6>
+
+                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                                <div>
+                                    <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
+                                    <h6 className="display_inline paddingL-ms ">{response && array[selector + 1].price}$</h6>
+                                </div>
+                                <div className="display_inline font-book button-connect button-round paddingL-s ">
+                                    Book Now
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -100,6 +121,21 @@ export function SpecialOffers(props) {
                         <img className='offer_image'
                             src={root + (response && array[selector + 2].image.url)}
                         ></img>
+
+                        <div className="relative paddingL-ms ">
+                            <h5 className="font-gray text-left ">{response && array[selector + 2].date}</h5>
+                            <h6 className="text-left ">{response && array[selector + 2].title}</h6>
+
+                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                                <div>
+                                    <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
+                                    <h6 className="display_inline paddingL-ms ">{response && array[selector + 2].price}$</h6>
+                                </div>
+                                <div className="display_inline font-book button-connect button-round paddingL-s ">
+                                    Book Now
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
@@ -159,7 +195,8 @@ export function SpecialOffers(props) {
                                 : response.special_offers.button_right[1].url))}></img>
                 </div>
 
-                <div className={`button-generic border-blue center_text clickable center_v paddings-button
+                <div onClick={handleViewOffers}  
+                    className={`button-generic border-blue center_text clickable center_v paddings-button
                                 ${darkTheme ? 'glow-solid-D glow-L' : 'glow-solid-L glow-D'}
                                 `}>
                     <h3 className="blue  text-nowrap">View All</h3>
