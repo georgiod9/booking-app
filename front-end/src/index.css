@@ -258,12 +258,22 @@ section h2 {
     margin-left: 3.5vw;
 }
 
+.marginR-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .marginR-1 {
 margin-right: 1vw;
 }
 
 .marginR-3 {
     margin-right: 3vw;
+}
+
+
+.padding-all {
+    padding: 20px 20px;
 }
 
 .paddings-button {
@@ -277,7 +287,7 @@ margin-right: 1vw;
 
 
 .paddingL-ms {
-    padding-left: 1vw;
+    padding-left: 12px;
 }
 
 .paddingL-s {
@@ -358,6 +368,10 @@ margin-right: 1vw;
 
 .icon-mini {
     max-width: 25vw;
+}
+
+.icon_location {
+    max-width: 30%;
 }
 
 .wrap {
@@ -926,6 +940,11 @@ margin-right: 1vw;
     justify-content: space-evenly;
 }
 
+.flex-between {
+    justify-content: space-between;
+}
+
+
 .flex-around {
     justify-content: space-around;
 }
@@ -1191,22 +1210,76 @@ margin-right: 1vw;
 /* Special offers */
 
 .offers_bg-L {
-    width: 80vw;
+    width: 86vw;
     border-radius: 20px;
     background-color: rgb(241,244,249);
 }
 
 
 .offers_bg-D {
-    width: 80vw;
+    width: 86vw;
     border-radius: 20px;
     background-color: rgb(38,41,56);
 }
 
+
+.icon-navigate {
+
+}
+
+@media (max-width:450px) {
+    .icon-navigate {
+        max-width: 20px;
+        transform: rotate(90deg);
+        
+    }
+}
+
+@media (max-width:770px) {
+    .offers_bg-L {
+        width: 96vw;
+        border-radius: 20px;
+        background-color: rgb(241,244,249);
+    }
+    
+    
+    .offers_bg-D {
+        width: 96vw;
+        border-radius: 20px;
+        background-color: rgb(38,41,56);
+    }
+
+    
+    .icon-navigate {
+        max-width: 30px;
+        
+    }
+}
+
+@media (min-width:1100px) {
+    .offers_bg-L {
+        width: 76vw;
+        border-radius: 20px;
+        background-color: rgb(241,244,249);
+    }
+    
+    
+    .offers_bg-D {
+        width: 76vw;
+        border-radius: 20px;
+        background-color: rgb(38,41,56);
+    }
+    
+}
+
+
+
+
 .card-offers {
     width: 220px;
-    height: 250px;
+    height: auto;
     border-radius: 10px;
+    padding-bottom: 10px;
     
 }
 
@@ -1227,6 +1300,7 @@ margin-right: 1vw;
     border-radius: 10px;
     margin: 12px auto;
     width: 90%;
+    max-height: 139px;
     
 }
 
@@ -1242,6 +1316,10 @@ margin-right: 1vw;
 
 .stick-left {
     left: 0;
+}
+
+.box-discover {
+    width: 86vw;
 }
 
 

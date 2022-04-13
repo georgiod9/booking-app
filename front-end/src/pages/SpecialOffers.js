@@ -53,7 +53,7 @@ export function SpecialOffers(props) {
     }
 
     function handleViewOffers() {
-        
+
     }
 
     function getOffers(element) {
@@ -64,9 +64,9 @@ export function SpecialOffers(props) {
         if (selector < (response && array.length)) {
 
             return (
-                <div className="flex-box horizontal relative">
+                <div className="flex-box horizontal relative flex-center">
                     <div className={`
-                    card-offers display-inline marginL-2
+                    card-offers display-inline 
                     ${darkTheme ? 'card_offers_border-D' : 'card_offers_border-L'}
                     `}>
 
@@ -76,7 +76,7 @@ export function SpecialOffers(props) {
                             <h5 className="font-gray text-left ">{response && array[selector].date}</h5>
                             <h6 className="text-left ">{response && array[selector].title}</h6>
 
-                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                            <div className="flex-box horizontal flex-between align_items-baseline  gap-s paddingR-ms">
                                 <div>
                                     <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
                                     <h6 className="display_inline paddingL-ms ">{response && array[selector].price}$</h6>
@@ -101,7 +101,7 @@ export function SpecialOffers(props) {
                             <h5 className="font-gray text-left ">{response && array[selector + 1].date}</h5>
                             <h6 className="text-left ">{response && array[selector + 1].title}</h6>
 
-                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                            <div className="flex-box horizontal flex-between align_items-baseline  gap-s paddingR-ms">
                                 <div>
                                     <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
                                     <h6 className="display_inline paddingL-ms ">{response && array[selector + 1].price}$</h6>
@@ -126,7 +126,7 @@ export function SpecialOffers(props) {
                             <h5 className="font-gray text-left ">{response && array[selector + 2].date}</h5>
                             <h6 className="text-left ">{response && array[selector + 2].title}</h6>
 
-                            <div className="flex-box horizontal align_items-baseline spacing gap-s paddingR-ms">
+                            <div className="flex-box horizontal flex-between align_items-baseline gap-s paddingR-ms">
                                 <div>
                                     <h5 className="display_inline font-gray text-left paddingT-s">from</h5>
                                     <h6 className="display_inline paddingL-ms ">{response && array[selector + 2].price}$</h6>
@@ -147,7 +147,7 @@ export function SpecialOffers(props) {
     }
 
     return (
-        <div className={`flex-box vertical flex-center align_items-center paddingT-m margins-section non-selectable
+        <div className={`flex-box vertical flex-center align_items-center align_content-center paddingT-m margins-section non-selectable
                         ${darkTheme ? 'offers_bg-D' : 'offers_bg-L'} `}>
             <p className='roboto-regular font-title'>Special Offers</p>
 
@@ -165,9 +165,10 @@ export function SpecialOffers(props) {
                     <h3 className='display-inline blue'>Lebanon</h3>
                     <img className='display-inline paddingL-xs' src={root + (response && response.special_offers.button_location.icon.url)}></img>
                 </div>
+                
 
                 <div className=" flex-box horizontal flex-center nowrap align_items-center paddingT-m paddingB-m">
-                    <img className="marginR-1 clickable glow"
+                    <img className="marginR-1 clickable glow icon-navigate"
                         onClick={handleLeftClick}
                         src={root + (response && (
                             darkTheme
@@ -187,7 +188,7 @@ export function SpecialOffers(props) {
                     </span>
 
 
-                    <img className="marginL-1 clickable glow"
+                    <img className="marginL-1 clickable glow icon-navigate"
                         onClick={handleRightClick}
                         src={root + (response && (
                             darkTheme

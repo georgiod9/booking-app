@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch'
 import { useEffect, useState } from 'react'
 import { SeachHeader } from './SearchHeader';
 import { SpecialOffers } from './SpecialOffers';
+import { Discover } from '../components/Discover';
 
 export default function Homepage(props) {
   const [darkTheme, setDarkTheme] = useState(true)
@@ -26,7 +27,7 @@ export default function Homepage(props) {
   const [searchMode, setSearchMode] = useState('Flight')
 
   useEffect(() => {
-    {data && setResponse(data)}
+    { data && setResponse(data) }
   })
 
   function handleFlightClick(value) {
@@ -67,7 +68,7 @@ export default function Homepage(props) {
                 `
                 }>
                 <img className='icon-flight-s' src={root + (response && response.banner.button_flight.icon.url)}></img>
-               <p >{response && response.banner.button_flight.title}</p>
+                <p >{response && response.banner.button_flight.title}</p>
               </div>
 
               <div onClick={() => handleFlightClick("Hotel")} className=
@@ -106,7 +107,7 @@ export default function Homepage(props) {
                 <img className='icon-search paddingR-xs' src={root + (response && response.banner.button_search.icon.url)}></img>
                 <p className=''>Search</p>
               </div>
-              
+
 
 
             </div>
@@ -118,7 +119,7 @@ export default function Homepage(props) {
 
       <section >
         <div className='flex-box nowrap vertical flex-center gap-ms text-center align-center box-about  padding-section'>
-        <p id="about" className='roboto-regular font-title'>About Us</p>
+          <p id="about" className='roboto-regular font-title'>About Us</p>
           <p className='karla-regular font-about-body'>{response && response.about.description1}</p>
           <p className='karla-regular  font-about-body paddingT-s'>{response && response.about.description2}</p>
         </div>
@@ -129,35 +130,48 @@ export default function Homepage(props) {
         </div>
       </section>
 
-      <section  className='non-selectable'>
+      <section className='non-selectable'>
         <div className='flex-box vertical flex-center gap-ms text-center align-center  padding-section'>
-        <p id="collection" className='roboto-regular font-title'>Our NFT Project</p>
+          <p id="collection" className='roboto-regular font-title'>Our NFT Project</p>
           <div className='flex-box vertical flex-center align_items-center align_content-center box-collection gap-collection paddingT-m gap-m collection_bg'>
-                <div className='flex-box horizontal flex-center gap-cards'>
-                    <div className='card card1'>
+            <div className='flex-box horizontal flex-center gap-cards'>
+              <div className='card card1'>
 
-                    </div>
-                    <div className='card card2'>
+              </div>
+              <div className='card card2'>
 
-                    </div>
-                    <div className='card card3'>
+              </div>
+              <div className='card card3'>
 
-                    </div>
-                </div>
-                <div className='button-roadmap clickable marginB-m'>
-                  <p className='karla-bold font-button white'>ROADMAP</p>
-                </div>
+              </div>
+            </div>
+            <div className='button-roadmap clickable marginB-m'>
+              <p className='karla-bold font-button white'>ROADMAP</p>
+            </div>
           </div>
         </div>
 
       </section>
 
       <section >
-      
-          <SpecialOffers functions={[appTheme, setAppTheme, searchMode, setSearchMode]}/>
-    
+        <SpecialOffers functions={
+          [appTheme, setAppTheme, searchMode, setSearchMode]} />
       </section>
 
+      <section>
+        <div className='flex-box vertical flex-center align_items-center padding-section'>
+          <p className='roboto-regular font-title'>Discover</p>
+          <h4 className='font-gray paddingB-m'>Top Countries and Territories</h4>
+
+
+          <div className={`${darkTheme?'offers_bg-D':'offers_bg-L padding-all'} `}>
+            <Discover functions={[darkTheme, setDarkTheme]} />
+            
+          </div>
+
+        </div>
+
+      </section>
 
 
     </div>
