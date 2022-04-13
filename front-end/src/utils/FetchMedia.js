@@ -12,6 +12,18 @@ export function FetchMedia() {
 
 export function getList(array, selector, maxCards) {
     console.log("SELECTOR-MEDAI: ", selector)
+    const selection = [array[0], array[1], array[2], array[3]]
+    if (selector < ((array.length + 1) - maxCards )) {
+        for (var i = 0; i < maxCards; i++) {
+            selection[i] = (array[i + selector])
+           // console.log("SELECTION SET TO: ", selection[i])
+        }
+    }
+    else {
+        for (var i = 0; i < maxCards; i ++) {
+            selection[i] = 0;
+        }
+    }
 
-    return(array)
+    return(selection)
 }

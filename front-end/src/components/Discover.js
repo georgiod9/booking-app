@@ -23,7 +23,7 @@ export function Discover(props) {
     }
 
     function handleRightClick() {
-        if (selector < (data && data.discover.discovers.length) - 3) {
+        if (selector < (data && data.discover.discovers.length) - maxCards) {
             if (selector < 10) selector++;
             setSelector(selector)
         }
@@ -33,6 +33,7 @@ export function Discover(props) {
         const discovers = data && data.discover.discovers
         console.log("MEDIA", getList(discovers, selector, maxCards))
         const array = getList(discovers, selector, maxCards)
+
 
         return (
             <div className="flex-box horizontal relative align_items-center align_content-center flex-center gap-s">
@@ -115,16 +116,16 @@ export function Discover(props) {
     }
 
     return (
-        <div className="flex-box vertical flex-center  align_items-center gap-s ">
+        <div className="flex-box vertical flex-center  align_items-center gap-m ">
 
 
 
-            <span className="marginR-auto">{getDiscovers()}</span>
+            <span className="marginR-auto paddingT-m">{data && getDiscovers()}</span>
 
 
 
 
-            <div>
+            <div className="flex-box horizontal flex-center gap-s">
                 <img onClick={handleLeftClick} className='display_inline clickable glow' src={root +
                     (data &&
                         (darkTheme
