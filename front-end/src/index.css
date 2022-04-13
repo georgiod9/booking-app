@@ -228,6 +228,10 @@ section h2 {
     color: #868DB3;
 }
 
+.font-blue {
+    color: rgb(60, 113, 255);
+}
+
 .margins {
     margin: 0px 10px;
 }
@@ -274,6 +278,10 @@ margin-right: 1vw;
 
 .padding-all {
     padding: 20px 20px;
+}
+
+.paddings-s {
+    padding: 20px 15px;
 }
 
 .paddings-button {
@@ -509,6 +517,10 @@ margin-right: 1vw;
     gap: 0px 30px;
 }
 
+.gap-xs {
+    gap: 10px 5px;
+}
+
 .gap-s {
     gap: 10px 10px;
 }
@@ -518,7 +530,7 @@ margin-right: 1vw;
 }
 
 .gap-sm {
-    gap: 1px 0vw;
+    gap: 1px 40px;
 }
 
 .gap-m {
@@ -1280,7 +1292,13 @@ margin-right: 1vw;
     height: auto;
     border-radius: 10px;
     padding-bottom: 10px;
+    transition: 0.5s all;
     
+}
+
+.card-offers:hover {
+    width: 280px;
+    transition: 0.5s all;
 }
 
 .card_offers_border-D {
@@ -1322,6 +1340,49 @@ margin-right: 1vw;
 .box-discover {
     width: 86vw;
 }
+
+.card-testimony {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    
+}
+
+.card-testimony-D {
+    border: 1px solid #868DB3;
+    background-color: #2b2f3dbd;
+}
+
+.card-testimony-L {
+    border: 1px solid #C5CFDB;
+    background-color: #E7EBEF;
+}
+
+.icon_quote {
+    max-width: max-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

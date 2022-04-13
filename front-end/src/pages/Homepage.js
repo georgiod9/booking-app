@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { SeachHeader } from './SearchHeader';
 import { SpecialOffers } from './SpecialOffers';
 import { Discover } from '../components/Discover';
+import { Testimonial } from '../components/Testimonial';
 
 export default function Homepage(props) {
   const [darkTheme, setDarkTheme] = useState(true)
@@ -171,6 +172,23 @@ export default function Homepage(props) {
 
         </div>
 
+      </section>
+
+      <section className='padding-section'>
+        <div className='display-block text-center paddingB-m'>
+          <p className='margins font-title roboto-regular'>Testimonials</p>
+          <h5 className='font-gray'>What our Travelers say</h5>
+        </div>
+
+        <div className='flex-box horizontal flex-center gap-sm'>
+          <div>
+            <Testimonial props={[darkTheme]}/>
+          </div>
+
+          <div>
+            <Testimonial props={[darkTheme]}/>
+          </div>
+        </div>
       </section>
 
 
