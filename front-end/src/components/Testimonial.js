@@ -8,7 +8,7 @@ export function Testimonial(params) {
     const testimonials = (data && data.testimonials.testimonials)
     console.log("TESTIMON: ",testimonials && testimonials.length)
     
-    const darkTheme = params.props
+    const [darkTheme, setDarkTheme] = params.props
     //console.log("PARAM:", darkTheme)
 
     const min = 0
@@ -16,10 +16,12 @@ export function Testimonial(params) {
 
     var rand =  Math.floor(Math.random() * 10 )
     console.log("RANDOM: ", rand)
+    console.log("TEST DARK: ", darkTheme)
 
     return (
         <div className={`card-testimony flex-box gap-xs horizontal flex-center align_items-center align_content-center
-                        ${darkTheme?'card-testimony-D':'card-testimony-D'}
+        ${darkTheme ? 'card-testimony-D' : 'card-testimony-L'}
+                        ${console.log(darkTheme)}
                         `}>
             
             <img className="icon_quote align_self-start paddings-s" src={root + (data && data.testimonials.icon_quote[0].url)}></img>
@@ -32,7 +34,7 @@ export function Testimonial(params) {
             </div>
 
             <img  className="icon_quote align_self-end paddings-s" src={root + (data && data.testimonials.icon_quote[1].url)}></img>
-
+           
         </div>
     )
 

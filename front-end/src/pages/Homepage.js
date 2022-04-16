@@ -42,6 +42,10 @@ export default function Homepage(props) {
     }
   }
 
+  function handleTestimonyClick() {
+
+  }
+
 
 
   return (
@@ -165,29 +169,46 @@ export default function Homepage(props) {
           <h4 className='font-gray paddingB-m'>Top Countries and Territories</h4>
 
 
-          <div className={`${darkTheme?'offers_bg-D':'offers_bg-L padding-all'} `}>
+          <div className={`padding-all ${darkTheme ? 'offers_bg-D' : 'offers_bg-L'} `}>
             <Discover functions={[darkTheme, setDarkTheme]} />
-            
+
           </div>
 
         </div>
 
       </section>
 
-      <section className='padding-section'>
-        <div className='display-block text-center paddingB-m'>
-          <p className='margins font-title roboto-regular'>Testimonials</p>
-          <h5 className='font-gray'>What our Travelers say</h5>
-        </div>
+      <section className='padding-section paddingB-m'>
 
-        <div className='flex-box horizontal flex-center gap-sm'>
-          <div>
-            <Testimonial props={[darkTheme]}/>
+        <div className='flex-box vertical flex-center gap-s'>
+          <div className='display-block text-center paddingB-m'>
+            <p className='margins font-title roboto-regular'>Testimonials</p>
+            <h5 className='font-gray'>What our Travelers say</h5>
           </div>
 
-          <div>
-            <Testimonial props={[darkTheme]}/>
+          <div className='flex-box horizontal flex-center gap-sm'>
+            <div>
+              <Testimonial props={[darkTheme, setDarkTheme]} />
+            </div>
+
+            <div>
+              <Testimonial props={[darkTheme, setDarkTheme]} />
+            </div>
           </div>
+
+          <div className='flex-box horizontal gap-m flex-center paddingT-s'>
+            <img src={root + (data && (
+              darkTheme ? data.testimonials.button_left[0].url
+                : data.testimonials.button_left[1].url
+            ))}></img>
+
+
+            <img src={root + (data && (
+              darkTheme ? data.testimonials.button_right[0].url
+                : data.testimonials.button_right[1].url
+            ))}></img>
+          </div>
+
         </div>
       </section>
 

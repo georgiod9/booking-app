@@ -16,17 +16,31 @@
     "testimonials": {
       "collection": "testimonial"
     },
+    "icon_quote": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
     "button_left": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.button"
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     },
     "button_right": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.button"
-    },
-    "icon_quote": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
