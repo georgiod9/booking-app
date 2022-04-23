@@ -32,11 +32,11 @@ export default function Homepage(props) {
   })
 
   function handleFlightClick(value) {
-    if (searchMode === 'Flight' && value == "Hotel") {
+    if (searchMode === 'Flight' && value === "Hotel") {
       setSearchMode('Hotel')
       console.log("Hotel Search Mode")
     }
-    else if (searchMode === 'Hotel' && value == "Flight") {
+    else if (searchMode === 'Hotel' && value === "Flight") {
       setSearchMode('Flight')
       console.log("Flight Search Mode")
     }

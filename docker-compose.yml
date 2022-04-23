@@ -27,17 +27,3 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
 
-  app2:
-    build:
-      context: ./front-end
-    environment:
-      CHOKIDAR_USEPOLLING: "true"
-    volumes:
-      - ./front-end/:/front-end/
-    ports:
-      - 3000:3000
-    depends_on:
-      - strapi
-    image: app2:react
-    container_name: react_container
-    command: npm start

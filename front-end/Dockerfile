@@ -2,10 +2,14 @@ FROM node:15.13-alpine
 
 WORKDIR /front-end
 
-ENV PATH="./node_modules/.bin:$PATH"
+
+COPY package.json ./
+
+
+RUN npm install 
 
 COPY . .
 
-RUN npm run build
-
 CMD ["npm", "start"]
+
+EXPOSE 3000

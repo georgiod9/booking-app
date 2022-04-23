@@ -7,12 +7,12 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "gcp-build": "strapi build"
   },
-  "devDependencies": {},
   "dependencies": {
     "knex": "0.21.18",
-    "pg": "8.5.1",
+    "pg": "^8.7.3",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
     "strapi-connector-bookshelf": "3.6.8",
@@ -32,8 +32,9 @@
     "uuid": "07156041-91d9-4e4f-a578-efc0027ade3c"
   },
   "engines": {
-    "node": ">=10.16.0 <=14.x.x",
+    "node": ">=10.16.0 <=18.x.x",
     "npm": "^6.0.0"
   },
+
   "license": "MIT"
 }
